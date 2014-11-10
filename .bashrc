@@ -2,9 +2,26 @@
 # ~/.bashrc is for non-login shell
 # ~/.profile is for login shell
 
-# Location of fixing laptop suspend
+################################
+# Fix laptop suspend - not sure which one fixed it
+################################
+
+# In this file, uncomment and change to HandleLidSwitch=ignore
 #/etc/systemd/logind.conf
 
+# Also added a script for lid shutting
+#/etc/acpi/local/lid.sh.post
+
+    ##!/bin/bash
+    #if grep -q closed /proc/acpi/button/lid/*/state
+    #then
+    #    /usr/sbin/pm-suspend
+    #fi
+    
+################################
+# Firewall enabled
+################################
+    #sudo ufw enable 
 
 ################################
 # Grub timeout
@@ -39,3 +56,4 @@
     # sudo apt-get install tp-smapi-dkms 
 
 alias rscheme="racket -i -p neil/sicp -l xrepl"
+alias tmux="tmux -2" # force tmux to work in 256 colors
