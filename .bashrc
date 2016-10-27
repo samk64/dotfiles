@@ -6,10 +6,12 @@
 # Fix laptop suspend - not sure which one fixed it
 ################################
 
+# In power manager, under A/C and battery, change to suspend on lid close.
+
 # In this file, uncomment and change to HandleLidSwitch=ignore
 #/etc/systemd/logind.conf
 
-# Also added a script for lid shutting
+# Also add a script for lid shutting
 #/etc/acpi/local/lid.sh.post
 
     ##!/bin/bash
@@ -17,7 +19,7 @@
     #then
     #    /usr/sbin/pm-suspend
     #fi
-    
+
 ################################
 # Firewall enabled
 ################################
@@ -57,3 +59,4 @@
 
 alias rscheme="racket -i -p neil/sicp -l xrepl"
 alias tmux="tmux -2" # force tmux to work in 256 colors
+alias resetfan="sudo modprobe -r thinkpad_acpi && sudo modprobe thinkpad_acpi"
